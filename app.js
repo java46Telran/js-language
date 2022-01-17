@@ -1,17 +1,17 @@
 /*************************Strings */
 const str1 = "abc";
 const str2 = "abc";
-console.log(`str1 == str2 is ${str1 == str2}`)
-console.log(`"abc" < "ab" is ${str1 < "ab"}`)
-console.log(`"123" > 23 is ${"123" > 23}`);
-console.log(`"123" > "23" is ${"123" > "23"}`);
+// console.log(`str1 == str2 is ${str1 == str2}`)
+// console.log(`"abc" < "ab" is ${str1 < "ab"}`)
+// console.log(`"123" > 23 is ${"123" > 23}`);
+// console.log(`"123" > "23" is ${"123" > "23"}`);
 /****************************************** */
 //if  logical expression contains both string and number, JS will convert string to number
 //if string doesn't contain a number a result of conversion will be NaN
 //In any logical expression if there is NaN, then the result will be false
-console.log(`"abc" > 23 is ${"abc" > 23}`);
-console.log(`"abc" < 23 is ${"abc" < 23}`);
-console.log(`"abc" != 23 is ${!("abc" == 23)}`)
+// console.log(`"abc" > 23 is ${"abc" > 23}`);
+// console.log(`"abc" < 23 is ${"abc" < 23}`);
+// console.log(`"abc" != 23 is ${!("abc" == 23)}`)
 /********************************************* */
 function stringProcessing(str) {
         const strP = "" + str;
@@ -41,7 +41,7 @@ function stringProcessing(str) {
 //       console.log(digit);
 //       return "" + digit; //it will work only for base <= 10 
 // }
-console.log(encode(10, 2))
+//console.log(encode(10, 2))
 // write function 
 function encode (num, codingString) {
         //codingString - any string with no repeated symbols
@@ -49,4 +49,26 @@ function encode (num, codingString) {
         //base = length of codingString
         // algorithm the same as specified above
         // getSymbol(digit, codingString) using operator []
+        let flRepeated = false;
+        for (let i = 0; i < codingString.length; i++) {
+                if(codingString.lastIndexOf(codingString[i]) != i) {
+                        console.log(`coding string has repeated symbol ${codingString[i]}`)
+                        flRepeated = true;
+                }
+        }
+        if (!flRepeated) {
+            let res = "" ;
+            const base = codingString.length;
+            do {
+                    const digit = Math.trunc(num % base);
+                    const digitSymb = codingString[digit];
+                    res = digitSymb + res;
+                    num = Math.trunc(num / base);
+
+            } while(num != 0); 
+            return res;  
+        }
 }
+console.log(`encode(5, '.-') = ${encode(5, '.-')}`);
+console.log(`encode(5, '..-') = ${encode(5, '..-')}`);
+console.log(`encode(555, '&*()%$#@!+') = ${encode(555, '&*()%$#@!+')}`);
