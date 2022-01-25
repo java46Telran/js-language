@@ -27,11 +27,40 @@ const persons = [
         createPerson(123, "Vasya", createAddress("Rehovot","Parshani")),
         createPerson(124, "Olya", createAddress("Rehovot","Pr. Plaut")),
         createPerson(125, "Tolya", createAddress("Tel-Aviv","Dizengoff")),
+        createPerson(126, "Sara", createAddress('Lod', 'Sokolov'))
 ]
-/**************************************HW 14 definition task3 */
-//TODO applying methods of arrays you should find the persons living in Rehovot and display them out 
+/**************************************HW 14 definition task3 */ 
 
-/****************************************HW 14 definition task4 */
-//TODO move the persons that don't live in Rehovot at beginning of the array persons
+//TODO write function getPersonsCity(persons, city) , taking array of the persons and a city (see the branch js-objects ) and returning array of the persons living in the given city. For example, find persons living in Rehovot 
+
+// Input: const persons = [ 
+
+//         createPerson(123, "Vasya", createAddress("Rehovot","Parshani")), 
+
+//         createPerson(124, "Olya", createAddress("Rehovot","Pr. Plaut")), 
+
+//         createPerson(125, "Tolya", createAddress("Tel-Aviv","Dizengoff")), 
+
+//         createPerson(126, "Sara", createAddress('Lod', 'Sokolov')) 
+
+// ] 
+
+// Output: getPersonsCity(persons, ‘Rehovot’) => [ 
+
+//         {id: 123, name: "Vasya", address:{city: "Rehovot",street: "Parshani")), 
+
+//         {id: 124, name: "Olya", address:{city: "Rehovot",street: "Pr. Plaut")) 
+
+// ] 
+
+ 
+ 
+
+/****************************************HW 14 definition task4 */ 
+
+//TODO write function movePersonsNoCityAtBeginning(persons, city) taking array of the persons and a city (see the branch js-objects ) and returning new array with all persons not living in the given city moved at beginning; 
+
+// 
+/************************************************ */
 
 
