@@ -97,12 +97,12 @@ function myMap(array, callback) {
 /**********************************************************HW 14 Solutions */
 function myFilter(array, callbackPredicate) {
         const res = [];
-        function forEachCallback(n, i, a) {
-                if (callbackPredicate(n, i, a)) {
-                        res.push(n);
-                }
-        }
-        myForEach(array, forEachCallback);
+        // function forEachCallback(n, i, a) {
+        //         if (callbackPredicate(n, i, a)) {
+        //                 res.push(n);
+        //         }
+        // }
+        myForEach(array, (n, i, a) => callbackPredicate(n, i, a) && res.push(n) );
         return res;
 }
 const ar20 = [13, 17, 20, 23, 2, 40,50];
@@ -111,15 +111,15 @@ const arEvenOdd = myFilter(ar20,(n, _i, a) => a.length % 2 == 0 ?
 console.log(arEvenOdd);
 function myReduce(array, callbackReduce, initial) {
         
-        if (initial == undefined) {
+        if (initial === undefined) {
                 initial = array[0];
                 array = array.slice(1);
         }
         let res = initial;
-        function forEachCallack(n, i, a) {
-                 res = callbackReduce(res,n,i,a );       
-        }
-        myForEach(array,forEachCallack);
+        // function forEachCallack(n, i, a) {
+        //          res = callbackReduce(res,n,i,a );       
+        // }
+        myForEach(array,(n, i, a) => res = callbackReduce(res, n, i, a));
         return res;
 }
 let res = myReduce(ar20, (res, cur) => res + cur, 0);
