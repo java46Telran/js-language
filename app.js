@@ -6,9 +6,13 @@ function getRandomNumber(min, max) {
 //if min > max then you should swap values
 //swap should be without additional variable in one line code
 }
-// write the function concatinate(prefix) {...}
-//  that by using the following code
+function concatinate(prefix) {
+        //TODO
+        //  that by using the following code
 //   const concatApp = concatinate('App - ');
 //    const concatMessage = concatApp('Test status: Done');
 //     console.log(concatMessage); 
 //     there should be displayed out App - Test status: Done
+}
+
+
